@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<!--This file is in the Girr (General IR Remote) format, see http://www.harctoolbox.org/Girr.html--><remotes xmlns="http://www.harctoolbox.org/Girr" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" girrVersion="1.2" title="IrScrutinizer parametric export" xsi:schemaLocation="http://www.harctoolbox.org/Girr http://www.harctoolbox.org/schemas/girr_ns-1.2.xsd">
+    <adminData>
+        <creationData creatingUser="nbonamy" creationDate="2023-07-01_13:00:22" tool="IrScrutinizer" tool2="IrpTransmogrifier" tool2Version="1.2.11" toolVersion="2.4.0"/>
+    </adminData>
+    <remote comment="Export from IrScrutinizer" name="Denon_RC-1237_raw">
+        <commandSet name="commandSet">
+            <parameters protocol="Denon-K">
+                <parameter name="S" value="1"/>
+                <parameter name="D" value="7"/>
+            </parameters>
+            <command F="16" master="parameters" name="KEY_POWER"/>
+            <command F="94" master="parameters" name="KEY_POWERON"/>
+            <command F="95" master="parameters" name="KEY_POWEROFF"/>
+            <command F="5" master="parameters" name="KEY_TVAUTOPLAY"/>
+            <command F="51" master="parameters" name="KEY_ANALOGMODE"/>
+            <command F="13" master="parameters" name="KEY_VOLUMEUP"/>
+            <command F="12" master="parameters" name="KEY_VOLUMEDOWN"/>
+            <command F="11" master="parameters" name="KEY_MUTE"/>
+            <command F="44" master="parameters" name="KEY_MUTEON"/>
+            <command F="45" master="parameters" name="KEY_MUTEOFF"/>
+            <command F="15" master="parameters" name="KEY_INPUTUP"/>
+            <command F="14" master="parameters" name="KEY_INPUTDOWN"/>
+            <command F="1" master="parameters" name="KEY_PHONO"/>
+            <command F="2" master="parameters" name="KEY_CD"/>
+            <command F="4" master="parameters" name="KEY_AUX1"/>
+            <command F="7" master="parameters" name="KEY_NETWORK"/>
+            <command F="25" master="parameters" name="KEY_TAPE1"/>
+            <command F="63" master="parameters" name="KEY_EXTPRE"/>
+            <command F="22" master="parameters" name="KEY_COAX1"/>
+            <command F="20" master="parameters" name="KEY_OPTICAL1"/>
+            <command F="21" master="parameters" name="KEY_OPTICAL2"/>
+            <command F="116" master="parameters" name="KEY_OPTICAL3"/>
+            <command F="113" master="parameters" name="KEY_OPTICALTOGGLE"/>
+            <command F="114" master="parameters" name="KEY_COAXIALTOGGLE"/>
+            <command F="115" master="parameters" name="KEY_DIGITALTOGGLE"/>
+            <command F="8" master="parameters" name="KEY_USBDAC"/>
+            <command F="17" master="parameters" name="KEY_SOURCEDIRECT"/>
+            <command F="79" master="parameters" name="KEY_DIMMER"/>
+        </commandSet>
+    </remote>
+</remotes>

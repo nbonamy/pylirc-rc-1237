@@ -1,0 +1,16 @@
+
+[Unit]
+Description=pylirc-rc-1237
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+User=mnmt
+WorkingDirectory=/home/mnmt/pylirc-rc-1237
+ExecStart=/usr/bin/python3 ./main.py
+
+[Install]
+WantedBy=multi-user.target
