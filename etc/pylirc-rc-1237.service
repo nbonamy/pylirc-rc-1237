@@ -9,6 +9,7 @@ Type=simple
 Restart=always
 RestartSec=5
 User=mnmt
+StandardOutput=/var/log/pylirc-rc-1237.log
 WorkingDirectory=/home/mnmt/pylirc-rc-1237
 ExecStart=/usr/bin/python3 ./main.py
 
