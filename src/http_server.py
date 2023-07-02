@@ -57,8 +57,9 @@ class ApiHandler(http.server.BaseHTTPRequestHandler):
 
   def process_send(self):
     command = self.get_parameters().get('command')
+    duration = self.get_parameters().get('duration')
     repeat = self.get_parameters().get('repeat')
-    if command is not None and self.server.processor(command, repeat):
+    if command is not None and self.server.processor(command, repeat, duration):
       self.write_json({ 'status': 'ok', 'command': command })
     else:
       self.error()
