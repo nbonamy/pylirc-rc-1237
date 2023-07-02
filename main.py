@@ -13,8 +13,8 @@ def main():
   lirc = None
   tts = None
 
-  def lirc_processor(command):
-    return lirc.handle(command)
+  def lirc_processor(command, repeat):
+    return lirc.send(command, repeat)
 
   # load config
   config = Configuration(load_yaml('config/config.yml'))

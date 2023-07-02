@@ -36,7 +36,8 @@ class ApiHandler(http.server.BaseHTTPRequestHandler):
 
   def get_parameters(self):
     query = urlparse(self.path).query
-    return parse_qs(query)
+    return dict((k, v[0] if isinstance(v, list) and len(v) == 1 else v)
+      for k, v in parse_qs(query).items())
 
   def do_GET(self):
 
@@ -55,8 +56,9 @@ class ApiHandler(http.server.BaseHTTPRequestHandler):
       self.error(HTTPStatus.NOT_FOUND)
 
   def process_send(self):
-    command = self.get_parameters().get('command', [''])[0]
-    if self.server.processor(command):
+    command = self.get_parameters().get('command')
+    repeat = self.get_parameters().get('repeat')
+    if command is not None and self.server.processor(command, repeat):
       self.write_json({ 'status': 'ok', 'command': command })
     else:
       self.error()
