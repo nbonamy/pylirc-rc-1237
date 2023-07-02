@@ -56,7 +56,7 @@ class ApiHandler(http.server.BaseHTTPRequestHandler):
 
   def process_send(self):
     command = self.get_parameters().get('command', [''])[0]
-    if self.server.processor(f'KEY_{command}'):
+    if self.server.processor(command):
       self.write_json({ 'status': 'ok', 'command': command })
     else:
       self.error()
